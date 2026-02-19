@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Idea Catching — The Present of Work</title>
+  <meta name="description" content="A playful YouTube series where ideas grow in public. Join TPOW's Idea Catching adventure and nurture your seedling thoughts into full-bloom realities." />
+  <meta property="og:title" content="Idea Catching — The Present of Work" />
+  <meta property="og:description" content="A cozy YouTube series for growing ideas in public, brought to you by The Present of Work." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #f7f2e8;
+      --parchment: #ede6d4;
+      --bark: #3a2f1e;
+      --moss: #3d5a3e;
+      --sage: #7a9e7e;
+      --amber: #c4852a;
+      --gold: #e8b84b;
+      --terracotta: #b85c38;
+      --mist: #d4e0d5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--bark);
+      font-size: 17px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(247, 242, 232, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(58, 47, 30, 0.1);
+    }
+
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--moss);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bark);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--moss); }
+
+    /* ─── HERO ────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 8rem 2rem 6rem;
+      text-align: center;
+      background: radial-gradient(ellipse at 60% 40%, rgba(125, 175, 130, 0.18) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(196, 133, 42, 0.12) 0%, transparent 50%),
+                  var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(61, 90, 62, 0.12);
+      top: -100px;
+      right: -150px;
+      animation: rotate 40s linear infinite;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 1px dashed rgba(196, 133, 42, 0.2);
+      bottom: -80px;
+      left: -80px;
+      animation: rotate 30s linear infinite reverse;
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.2s;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--moss);
+      margin-bottom: 0.3em;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.4s;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--amber);
+    }
+
+    .hero-sub {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--bark);
+      opacity: 0.7;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.6s;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--moss);
+      color: var(--cream);
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      transition: background 0.25s, transform 0.2s;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.8s;
+    }
+
+    .hero-cta:hover {
+      background: var(--amber);
+      transform: translateY(-2px);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 1.2s, bob 2s ease-in-out infinite 2s;
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── DIVIDER ─────────────────────────────── */
+    .divider {
+      height: 80px;
+      background: linear-gradient(to bottom right, var(--cream) 49.5%, var(--parchment) 50%);
+    }
+    .divider.reverse {
+      background: linear-gradient(to bottom left, var(--parchment) 49.5%, var(--cream) 50%);
+    }
+
+    /* ─── SECTIONS ────────────────────────────── */
+    section { padding: 6rem 2rem; }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .container-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--amber);
+    }
+
+    /* ─── ABOUT ───────────────────────────────── */
+    .about {
+      background: var(--parchment);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 1.2rem;
+      color: rgba(58, 47, 30, 0.85);
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-traits {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .trait {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      background: white;
+      padding: 1.2rem 1.4rem;
+      border-radius: 12px;
+      border-left: 3px solid var(--moss);
+      box-shadow: 0 2px 12px rgba(58, 47, 30, 0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .trait:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 20px rgba(58, 47, 30, 0.1);
+    }
+
+    .trait-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .trait-text strong {
+      display: block;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .trait-text span {
+      font-size: 0.88rem;
+      color: rgba(58, 47, 30, 0.65);
+    }
+
+    /* ─── EPISODES ────────────────────────────── */
+    .episodes {
+      background: var(--cream);
+    }
+
+    .episodes-intro {
+      max-width: 600px;
+      margin-bottom: 4rem;
+    }
+
+    .episodes-intro p {
+      color: rgba(58, 47, 30, 0.75);
+      font-size: 1.05rem;
+    }
+
+    .episodes-list {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .episode {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 2rem;
+      padding: 2rem 2.5rem;
+      border-radius: 16px;
+      background: var(--parchment);
+      border: 1px solid rgba(58, 47, 30, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .episode::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--moss);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.3s ease;
+    }
+
+    .episode:hover::before { transform: scaleY(1); }
+
+    .episode:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(58, 47, 30, 0.1);
+    }
+
+    .episode-num {
+      font-family: 'Fraunces', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: rgba(61, 90, 62, 0.2);
+      line-height: 1;
+      margin-top: 0.2rem;
+    }
+
+    .episode-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+      background: rgba(61, 90, 62, 0.1);
+      color: var(--moss);
+      margin-bottom: 0.5rem;
+    }
+
+    .episode h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .episode p {
+      font-size: 0.92rem;
+      color: rgba(58, 47, 30, 0.7);
+      margin-bottom: 0.8rem;
+    }
+
+    .episode-questions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .ep-tag {
+      font-size: 0.78rem;
+      padding: 0.2rem 0.75rem;
+      background: white;
+      border-radius: 100px;
+      color: rgba(58, 47, 30, 0.6);
+      border: 1px solid rgba(58, 47, 30, 0.12);
+    }
+
+    /* ─── LOOPS ───────────────────────────────── */
+    .loops {
+      background: var(--moss);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loops::before {
+      content: 'LEARNING';
+      font-family: 'Fraunces', serif;
+      font-size: clamp(5rem, 15vw, 12rem);
+      font-weight: 700;
+      opacity: 0.05;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .loops .section-label { color: var(--gold); }
+
+    .loops .section-title { color: var(--cream); }
+
+    .loops-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .loop-card {
+      padding: 2.5rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(4px);
+    }
+
+    .loop-num {
+      font-family: 'Fraunces', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .loop-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: var(--mist);
+    }
+
+    .loop-card p {
+      font-size: 0.9rem;
+      color: rgba(247, 242, 232, 0.65);
+      line-height: 1.7;
+    }
+
+    .loop-question {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.85;
+    }
+
+    /* ─── PREPARE ─────────────────────────────── */
+    .prepare {
+      background: var(--parchment);
+    }
+
+    .prepare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .prepare-card {
+      padding: 2.5rem;
+      border-radius: 16px;
+      background: var(--cream);
+      border: 1px solid rgba(58, 47, 30, 0.1);
+    }
+
+    .prepare-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(58, 47, 30, 0.1);
+    }
+
+    .prepare-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .prepare-card li {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      color: rgba(58, 47, 30, 0.8);
+    }
+
+    .prepare-card li::before {
+      content: '→';
+      color: var(--sage);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    /* ─── APPLY ───────────────────────────────── */
+    .apply {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .apply-box {
+      max-width: 620px;
+      margin: 3rem auto 0;
+      background: var(--parchment);
+      border-radius: 24px;
+      padding: 3rem;
+      border: 1px solid rgba(58, 47, 30, 0.1);
+    }
+
+    .apply-box p {
+      color: rgba(58, 47, 30, 0.75);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    .apply-steps {
+      text-align: left;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .apply-step {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: var(--moss);
+      color: var(--cream);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 500;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .apply-step p {
+      font-size: 0.92rem;
+      margin: 0;
+      color: rgba(58, 47, 30, 0.8);
+    }
+
+    .apply-email {
+      display: inline-block;
+      background: var(--moss);
+      color: var(--cream);
+      text-decoration: none;
+      padding: 1.1rem 3rem;
+      border-radius: 100px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: background 0.25s, transform 0.2s;
+      font-size: 1rem;
+    }
+
+    .apply-email:hover {
+      background: var(--amber);
+      transform: translateY(-2px);
+    }
+
+    /* ─── FOOTER ──────────────────────────────── */
+    footer {
+      background: var(--bark);
+      color: rgba(247, 242, 232, 0.6);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      line-height: 1.9;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* ─── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+
+      .about-grid,
+      .loops-grid,
+      .prepare-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .episode {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .episode-num { font-size: 2rem; }
+
+      .loops-grid { gap: 1.2rem; }
+
+      .apply-box { padding: 2rem 1.5rem; }
+    }
+
+    @media (max-width: 500px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Idea Catching</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#episodes">Episodes</a></li>
+      <li><a href="#learning">Learning</a></li>
+      <li><a href="#apply">Apply</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <p class="hero-eyebrow">The Present of Work · YouTube Series</p>
+      <h1>Ideas<br /><em>Catching</em></h1>
+      <p class="hero-sub">A cozy space for growing ideas in public — from tiny thought-seeds to full-bloom realities.</p>
+      <a href="#apply" class="hero-cta">Pitch your idea →</a>
+      <p class="scroll-hint">↓ &nbsp; Explore</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container-wide">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-label">What this is</p>
+          <h2 class="section-title">Not about<br /><em>perfect pitches</em></h2>
+          <p>Idea Catching is TPOW's series dedicated to thinking out loud — exploring curiosity, letting ideas evolve, and sharing the messy, beautiful journey between spark and reality.</p>
+          <p>Each participant goes through five recorded sessions designed to stretch their thinking across single, double, and triple learning loops — with a community of collaborators cheering them on.</p>
+          <p>Ideas of any flavor welcome: business, art, community, tech, or just plain interesting.</p>
+        </div>
+        <div class="about-traits">
+          <div class="trait">
+            <div class="trait-icon">🤔</div>
+            <div class="trait-text">
+              <strong>Idea-havers</strong>
+              <span>Seedling thoughts you're excited about — no matter the stage</span>
+            </div>
+          </div>
+          <div class="trait">
+            <div class="trait-icon">📱</div>
+            <div class="trait-text">
+              <strong>Willing to share</strong>
+              <span>Comfortable enough to think out loud on camera</span>
+            </div>
+          </div>
+          <div class="trait">
+            <div class="trait-icon">👂</div>
+            <div class="trait-text">
+              <strong>Open minds</strong>
+              <span>Ready for friendly feedback and collaborative play</span>
+            </div>
+          </div>
+          <div class="trait">
+            <div class="trait-icon">🔄</div>
+            <div class="trait-text">
+              <strong>Reflective learners</strong>
+              <span>Interested in the meta-process, not just the outcome</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider reverse"></div>
+
+  <!-- EPISODES -->
+  <section class="episodes" id="episodes">
+    <div class="container-wide">
+      <div class="episodes-intro">
+        <p class="section-label">Your adventure map</p>
+        <h2 class="section-title">Five episodes.<br /><em>One growing idea.</em></h2>
+        <p>Each session builds on the last — moving from capturing the excitement of your idea, to interrogating it, to reimagining it, to seeing it in full context.</p>
+      </div>
+      <div class="episodes-list">
+
+        <div class="episode">
+          <div class="episode-num">01</div>
+          <div>
+            <div class="episode-badge">Single Loop · 20–30 min · One-on-one</div>
+            <h3>First Catch ✨</h3>
+            <p>A cozy one-on-one chat to capture the raw excitement of your idea before the world gets hold of it.</p>
+            <div class="episode-questions">
+              <span class="ep-tag">What makes you go "oooh!"?</span>
+              <span class="ep-tag">Where were you when it first appeared?</span>
+              <span class="ep-tag">What's your tiny first step?</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="episode">
+          <div class="episode-num">02</div>
+          <div>
+            <div class="episode-badge">Single → Double Loop · Collaborative</div>
+            <h3>Idea Jam Session 🎵</h3>
+            <p>A friendly hangout with 2–3 creative collaborators. Expand possibilities, make surprising connections, and riff on wild variations.</p>
+            <div class="episode-questions">
+              <span class="ep-tag">If it was an ice cream flavor...</span>
+              <span class="ep-tag">What would your critic say?</span>
+              <span class="ep-tag">10-year-old you weighs in</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="episode">
+          <div class="episode-num">03</div>
+          <div>
+            <div class="episode-badge">Double Loop Focus · Reflective</div>
+            <h3>Reality Check 🔍</h3>
+            <p>Gentle but honest. We peek at assumptions, spot invisible guardrails, and question what your relationship to the idea reveals.</p>
+            <div class="episode-questions">
+              <span class="ep-tag">Your personal history in the idea</span>
+              <span class="ep-tag">What are you protecting?</span>
+              <span class="ep-tag">What did your idea just tell you?</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="episode">
+          <div class="episode-num">04</div>
+          <div>
+            <div class="episode-badge">Double Loop Applied · Hands-on</div>
+            <h3>Remix & Rebuild 🧪</h3>
+            <p>Hands-on making time. Build something scrappy and tangible on camera based on what the first three sessions revealed.</p>
+            <div class="episode-questions">
+              <span class="ep-tag">Zero-budget constraints</span>
+              <span class="ep-tag">Intentionally "wrong" approaches</span>
+              <span class="ep-tag">Before/after thinking</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="episode">
+          <div class="episode-num">05</div>
+          <div>
+            <div class="episode-badge">Triple Loop · Big picture</div>
+            <h3>The Big Picture 🌈</h3>
+            <p>Widen the lens. Celebrate how far the idea has come and situate it within larger patterns, systems, and futures it might help create.</p>
+            <div class="episode-questions">
+              <span class="ep-tag">Larger systems you're part of</span>
+              <span class="ep-tag">The 100-year version</span>
+              <span class="ep-tag">A message from future you</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LOOPS -->
+  <section class="loops" id="learning">
+    <div class="container-wide">
+      <p class="section-label">The method</p>
+      <h2 class="section-title">Three learning loops</h2>
+      <div class="loops-grid">
+        <div class="loop-card">
+          <div class="loop-num">1</div>
+          <h3>Single Loop</h3>
+          <p>Improving the idea itself. Working on the how — making the plan better, tighter, more concrete.</p>
+          <p class="loop-question">"How can we do this better?"</p>
+        </div>
+        <div class="loop-card">
+          <div class="loop-num">2</div>
+          <h3>Double Loop</h3>
+          <p>Examining your relationship to the idea. Questioning the assumptions underneath your approach.</p>
+          <p class="loop-question">"Why am I approaching it this way?"</p>
+        </div>
+        <div class="loop-card">
+          <div class="loop-num">3</div>
+          <h3>Triple Loop</h3>
+          <p>Expanding the context entirely. Seeing how the idea connects to larger patterns and possibilities.</p>
+          <p class="loop-question">"How does this connect to larger systems?"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background: linear-gradient(to bottom right, #3d5a3e 49.5%, #ede6d4 50%);"></div>
+
+  <!-- PREPARE -->
+  <section class="prepare" id="prepare">
+    <div class="container">
+      <p class="section-label">Before you arrive</p>
+      <h2 class="section-title">How to<br /><em>get ready</em></h2>
+      <div class="prepare-grid">
+        <div class="prepare-card">
+          <h3>Before your first session</h3>
+          <ul>
+            <li>Doodle or journal about your idea for 15 minutes</li>
+            <li>Gather any sketches, sticky notes, or inspirations</li>
+            <li>Wonder about what you're most curious to explore</li>
+            <li>Come in comfy clothes, exactly as you are</li>
+          </ul>
+        </div>
+        <div class="prepare-card">
+          <h3>What to bring</h3>
+          <ul>
+            <li>Your genuine enthusiasm — even if it comes with nerves</li>
+            <li>Openness to wherever the conversation flows</li>
+            <li>Objects related to your idea that fit on camera</li>
+            <li>Questions you're currently puzzling over</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider reverse" style="background: linear-gradient(to bottom left, #ede6d4 49.5%, #f7f2e8 50%);"></div>
+
+  <!-- APPLY -->
+  <section class="apply" id="apply">
+    <div class="container">
+      <p class="section-label">Join us</p>
+      <h2 class="section-title">Got a seedling<br /><em>idea?</em></h2>
+      <div class="apply-box">
+        <p>Send us a short email with a little bit about you and your idea. We reply within a week to schedule your first session.</p>
+        <div class="apply-steps">
+          <div class="apply-step">
+            <div class="step-num">1</div>
+            <p>Your name and how to reach you</p>
+          </div>
+          <div class="apply-step">
+            <div class="step-num">2</div>
+            <p>A tiny description of your idea — just 1 to 3 sentences</p>
+          </div>
+          <div class="apply-step">
+            <div class="step-num">3</div>
+            <p>Why sharing this journey in public feels right for you</p>
+          </div>
+          <div class="apply-step">
+            <div class="step-num">4</div>
+            <p>When you're free to play in the next month</p>
+          </div>
+        </div>
+        <a href="mailto:hello@tpow.org" class="apply-email">Email hello@tpow.org →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Idea Catching</div>
+    <p>
+      A series by <a href="#">The Present of Work (TPOW)</a><br />
+      Making work more present — and presents more work.
+    </p>
+  </footer>
+
+</body>
+</html>
