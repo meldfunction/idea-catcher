@@ -6,7 +6,7 @@
   <title>Idea Catching — The Present of Work</title>
   <meta name="description" content="A playful YouTube series where ideas grow in public. Join TPOW's Idea Catching adventure and nurture your seedling thoughts into full-bloom realities." />
   <meta property="og:title" content="Idea Catching — The Present of Work" />
-  <meta property="og:description" content="A cozy YouTube series for growing ideas in public, brought to you by The Present of Work." />
+  <meta property="og:description" content="A cozy YouTube series for growing ideas in public, brought to you by The Present of Work. Idea Catching helps you nurture seedling thoughts into full-bloom realities." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -537,6 +537,335 @@
       margin-top: 0.1rem;
     }
 
+    /* ─── DREAM COLLECTIVES ───────────────────── */
+    .dream {
+      background: var(--cream);
+      padding-bottom: 0;
+    }
+
+    .dream-header {
+      max-width: 680px;
+      margin-bottom: 3rem;
+    }
+
+    .dream-intro {
+      font-size: 1.05rem;
+      color: rgba(58, 47, 30, 0.75);
+      margin-top: 1rem;
+    }
+
+    .dream-intro strong {
+      color: var(--moss);
+      font-weight: 500;
+    }
+
+    .dream-gateway {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .gateway-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.2rem;
+    }
+
+    .gateway-arrow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .gateway-node {
+      padding: 0.55rem 1.3rem;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .gateway-node.active {
+      background: var(--moss);
+      color: var(--cream);
+    }
+
+    .gateway-line {
+      display: inline-block;
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(to right, var(--moss), var(--amber));
+      position: relative;
+    }
+
+    .gateway-line::after {
+      content: "▶";
+      position: absolute;
+      right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.6rem;
+      color: var(--amber);
+    }
+
+    .gateway-node.destination {
+      background: var(--amber);
+      color: var(--cream);
+    }
+
+    .gateway-note {
+      font-size: 0.78rem;
+      color: rgba(58, 47, 30, 0.45);
+      font-style: italic;
+      margin-top: 0.4rem;
+    }
+
+    .dream-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .dream-card {
+      padding: 2.2rem;
+      border-radius: 16px;
+      background: var(--parchment);
+      border: 1px solid rgba(58, 47, 30, 0.08);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dream-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 36px rgba(58, 47, 30, 0.1);
+    }
+
+    .dream-card-num {
+      font-family: "Fraunces", serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: rgba(61, 90, 62, 0.12);
+      line-height: 1;
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+    }
+
+    .dream-card h3 {
+      font-family: "Fraunces", serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+      padding-right: 3rem;
+    }
+
+    .dream-card p {
+      font-size: 0.9rem;
+      color: rgba(58, 47, 30, 0.7);
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+
+    .dream-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+    }
+
+    .dream-footer-note {
+      background: var(--moss);
+      color: var(--cream);
+      padding: 2rem 2.5rem;
+      border-radius: 16px;
+      margin-bottom: 5rem;
+    }
+
+    .dream-footer-note p {
+      font-family: "Fraunces", serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.7;
+      opacity: 0.92;
+    }
+
+    /* ─── FUNDERS ──────────────────────────────── */
+    .funders {
+      background: #1e3a20;
+      padding: 7rem 2rem;
+    }
+
+    .funders-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .funders-body {
+      color: rgba(247, 242, 232, 0.65);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .funders-cta-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+
+    .funders-cta-box h3 {
+      font-family: "Fraunces", serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .funders-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .funders-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      font-size: 0.88rem;
+      color: rgba(247, 242, 232, 0.7);
+      line-height: 1.6;
+    }
+
+    .funders-list li span {
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+
+    .funders-cta-btn {
+      display: block;
+      text-align: center;
+      background: var(--gold);
+      color: var(--bark);
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      transition: background 0.25s, transform 0.2s;
+      margin-bottom: 0.8rem;
+    }
+
+    .funders-cta-btn:hover {
+      background: var(--amber);
+      color: var(--cream);
+      transform: translateY(-2px);
+    }
+
+    .funders-cta-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(247, 242, 232, 0.4);
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .dream-grid { grid-template-columns: 1fr; }
+      .funders-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .gateway-line { width: 40px; }
+    }
+
+    /* ─── WHY PUBLIC ──────────────────────────── */
+    .why-public {
+      background: var(--cream);
+    }
+
+    .diplomat-quote {
+      margin: 2.5rem 0;
+      padding: 2rem 2.5rem;
+      border-left: 3px solid var(--amber);
+      background: var(--parchment);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .diplomat-quote p {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--bark);
+    }
+
+    .why-body {
+      color: rgba(58, 47, 30, 0.75);
+      font-size: 1.02rem;
+      max-width: 720px;
+      margin-bottom: 3.5rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .benefit-card {
+      padding: 1.8rem;
+      background: var(--parchment);
+      border-radius: 14px;
+      border: 1px solid rgba(58, 47, 30, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(58, 47, 30, 0.1);
+    }
+
+    .benefit-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .benefit-card h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: var(--bark);
+    }
+
+    .benefit-card p {
+      font-size: 0.88rem;
+      color: rgba(58, 47, 30, 0.68);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      .diplomat-quote {
+        padding: 1.5rem;
+      }
+    }
+
     /* ─── APPLY ───────────────────────────────── */
     .apply {
       background: var(--cream);
@@ -676,6 +1005,8 @@
       <li><a href="#about">About</a></li>
       <li><a href="#episodes">Episodes</a></li>
       <li><a href="#learning">Learning</a></li>
+      <li><a href="#dream">Dream Collectives</a></li>
+      <li><a href="#why">Why Public?</a></li>
       <li><a href="#apply">Apply</a></li>
     </ul>
   </nav>
@@ -684,7 +1015,7 @@
   <section class="hero">
     <div>
       <p class="hero-eyebrow">The Present of Work · YouTube Series</p>
-      <h1>Ideas<br /><em>Catching</em></h1>
+      <h1>Idea<br /><em>Catching</em></h1>
       <p class="hero-sub">A cozy space for growing ideas in public — from tiny thought-seeds to full-bloom realities.</p>
       <a href="#apply" class="hero-cta">Pitch your idea →</a>
       <p class="scroll-hint">↓ &nbsp; Explore</p>
@@ -884,6 +1215,138 @@
 
   <div class="divider reverse" style="background: linear-gradient(to bottom left, #ede6d4 49.5%, #f7f2e8 50%);"></div>
 
+  <!-- WHY PUBLIC -->
+  <section class="why-public" id="why">
+    <div class="container">
+      <p class="section-label">A fair question</p>
+      <h2 class="section-title">Why share an idea<br /><em>before it's ready?</em></h2>
+      <div class="diplomat-quote">
+        <p>"It's a completely reasonable thing to wonder. Ideas feel precious — and they are. The instinct to protect them until they're polished is deeply human. But here's what decades of innovation research keeps finding: the biggest threat to a good idea isn't exposure. It's isolation."</p>
+      </div>
+      <p class="why-body">Thinking in public isn't about giving anything away. It's about activating the network effects that only happen when others can see what you're building. The people who will most help you — collaborators, early users, mentors, champions — can't find you if they can't see you. Idea Catching is structured to protect the integrity of your idea while opening the doors that matter.</p>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🧲</div>
+          <h4>Attract your people</h4>
+          <p>The right collaborators, co-founders, and early supporters are looking for ideas like yours right now. Public thinking makes you findable to them before you even know you need them.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🪞</div>
+          <h4>Compress years of learning</h4>
+          <p>Feedback that would take months of private iteration arrives in a single session. You don't lose time — you gain it. The five-episode arc is designed to give you the equivalent of a year of quiet development in concentrated form.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📜</div>
+          <h4>Establish provenance</h4>
+          <p>A timestamped, public record of your idea's evolution is the clearest possible proof of authorship. Sharing openly doesn't expose your idea — it protects it, permanently and publicly.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌱</div>
+          <h4>Accountability that works</h4>
+          <p>Ideas developed privately are easy to quietly abandon. A community that has watched your journey creates the gentle, sustained pressure that turns intention into action — without the fear of judgment, only the warmth of being seen.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎙️</div>
+          <h4>A platform you didn't have to build</h4>
+          <p>TPOW's audience becomes your audience. Your idea reaches people who are already interested in thoughtful, generative work — without you needing a following of your own.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🤝</div>
+          <h4>You keep everything</h4>
+          <p>To be unambiguous: you retain full ownership of your idea. TPOW does not claim any stake, IP, or rights. We're here to help it grow — what it becomes is entirely yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DREAM COLLECTIVES -->
+  <section class="dream" id="dream">
+    <div class="container-wide">
+      <div class="dream-header">
+        <p class="section-label">After Episode 5</p>
+        <h2 class="section-title">This is one gateway.<br /><em>Here's what's beyond it.</em></h2>
+        <p class="dream-intro">Episode 5 isn't an ending — it's a threshold. Participants who complete the Idea Catching arc are invited into something larger: <strong>Dream Collectives</strong>, the incubation ecosystem of The Present of Work.</p>
+      </div>
+
+      <div class="dream-gateway">
+        <div class="gateway-label">You are here</div>
+        <div class="gateway-arrow">
+          <span class="gateway-node active">Idea Catching</span>
+          <span class="gateway-line"></span>
+          <span class="gateway-node destination">Dream Collectives</span>
+        </div>
+        <p class="gateway-note">One of several entry points into the TPOW ecosystem</p>
+      </div>
+
+      <div class="dream-grid">
+        <div class="dream-card podcast">
+          <div class="dream-card-num">01</div>
+          <h3>Decentralized Podcast Network</h3>
+          <p>Your idea gets distribution. Dream Collectives participants gain access to TPOW's growing podcast infrastructure — production support, audience, and a network of shows built by and for people doing this work. We help you build your voice, not just your idea.</p>
+          <div class="dream-tag">Distribution · Production · Audience</div>
+        </div>
+
+        <div class="dream-card peers">
+          <div class="dream-card-num">02</div>
+          <h3>Peer Collectives & Co-Builders</h3>
+          <p>You don't build alone. Dream Collectives connects you with others at the same threshold — people whose ideas, skills, and commitments complement yours. This is where co-founders find each other, where unexpected collaborations form, and where the work gets social roots.</p>
+          <div class="dream-tag">Co-builders · Collaborators · Community</div>
+        </div>
+
+        <div class="dream-card funding">
+          <div class="dream-card-num">03</div>
+          <h3>Funding Pathways</h3>
+          <p>Dream Collectives is backed by public funders, arts institutions, and aligned organizations — including Limicelia — who are actively interested in supporting ideas that build community rather than extract from it. Participants gain access to these relationships and the application support to use them.</p>
+          <div class="dream-tag">Arts Funding · Public Grants · Aligned Orgs</div>
+        </div>
+
+        <div class="dream-card incubation">
+          <div class="dream-card-num">04</div>
+          <h3>Ongoing Incubation</h3>
+          <p>Not a weekend sprint. Not a cohort that disappears after demo day. Dream Collectives provides sustained accompaniment — strategy, structure, and the kind of long-form support that helps ideas find their right form over time, at the pace they actually need to grow.</p>
+          <div class="dream-tag">Strategy · Structure · Long-form Support</div>
+        </div>
+      </div>
+
+      <div class="dream-footer-note">
+        <p>Dream Collectives is the people's incubator — commons-based, collectively governed, and built on the premise that the best ideas thrive with good company and patient resources, not pressure and extraction.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background: linear-gradient(to bottom right, #1a2e1b 49.5%, #2a4a2c 50%);"></div>
+
+  <!-- FUNDERS -->
+  <section class="funders" id="funders">
+    <div class="container">
+      <div class="funders-inner">
+        <div class="funders-left">
+          <p class="section-label" style="color: var(--gold);">For Funders & Partners</p>
+          <h2 class="section-title" style="color: var(--cream);">Invest in ideas<br /><em>before they're polished.</em></h2>
+          <p class="funders-body">The most generative moment in any idea's life is the messy middle — before it's been forced into a pitch deck, before it's been shaped by what the market wants instead of what the community needs. That's exactly where Idea Catching lives.</p>
+          <p class="funders-body">We're actively seeking public funders, arts institutions, and mission-aligned organizations who want to contribute to Dream Collectives — supporting participants with direct resources, funding pathways, and institutional relationships.</p>
+          <p class="funders-body">This isn't sponsorship. It's co-stewardship of an ecosystem designed to produce ideas with staying power, rooted in community rather than capital.</p>
+        </div>
+        <div class="funders-right">
+          <div class="funders-cta-box">
+            <h3>What your contribution supports</h3>
+            <ul class="funders-list">
+              <li><span>🎙️</span> Podcast production for Dream Collective participants</li>
+              <li><span>🌱</span> Stipends for idea-holders who can't participate without support</li>
+              <li><span>🤝</span> Facilitation and accompaniment infrastructure</li>
+              <li><span>🔗</span> Connections between participants and aligned funding opportunities</li>
+              <li><span>📡</span> Distribution and audience-building for emerging collectives</li>
+            </ul>
+            <a href="mailto:hello@tpow.org?subject=Dream Collectives Partnership" class="funders-cta-btn">Start a conversation →</a>
+            <p class="funders-cta-note">We respond to every inquiry. Let's find the right fit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background: linear-gradient(to bottom right, #2a4a2c 49.5%, #ede6d4 50%);"></div>
+
   <!-- APPLY -->
   <section class="apply" id="apply">
     <div class="container">
@@ -909,7 +1372,7 @@
             <p>When you're free to play in the next month</p>
           </div>
         </div>
-        <a href="mailto:hello@tpow.org" class="apply-email">Email hello@tpow.org →</a>
+        <a href="/cdn-cgi/l/email-protection#630b060f0f0c2317130c144d0c1104" class="apply-email">Email <span class="__cf_email__" data-cfemail="3c54595050537c484c534b12534e5b">[email&#160;protected]</span> →</a>
       </div>
     </div>
   </section>
@@ -918,10 +1381,4 @@
   <footer>
     <div class="footer-logo">Idea Catching</div>
     <p>
-      A series by <a href="#">The Present of Work (TPOW)</a><br />
-      Making work more present — and presents more work.
-    </p>
-  </footer>
-
-</body>
-</html>
+      A series by <a href="#">The Prese
